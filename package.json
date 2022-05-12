@@ -1,26 +1,49 @@
 {
-  "name": "globomantics-carved-rock-example",
-  "version": "1.0.0",
-  "description": "A sample application for the OAuth in Node.js Pluralsight course",
-  "main": "index.js",
-  "dependencies": {
-    "base64url": "^3.0.1",
-    "body-parser": "^1.19.0",
-    "consolidate": "^0.15.1",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "jsrsasign": "^8.0.12",
-    "qs": "^6.9.1",
-    "randomstring": "^1.1.5",
-    "request": "^2.88.0",
-    "sync-request": "^6.1.0",
-    "underscore": "^1.9.1",
-    "underscore.string": "^3.3.5"
-  },
-  "devDependencies": {},
+  "name": "apm",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ng": "ng",
+    "start": "ng serve -o",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "author": "Justin Boyer",
-  "license": "ISC"
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~10.0.2",
+    "@angular/common": "~10.0.2",
+    "@angular/compiler": "~10.0.2",
+    "@angular/core": "~10.0.2",
+    "@angular/forms": "~10.0.2",
+    "@angular/platform-browser": "~10.0.2",
+    "@angular/platform-browser-dynamic": "~10.0.2",
+    "@angular/router": "~10.0.2",
+    "bootstrap": "^4.5.0",
+    "font-awesome": "^4.7.0",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1000.1",
+    "@angular/cli": "~10.0.1",
+    "@angular/compiler-cli": "~10.0.2",
+    "@types/node": "^12.11.1",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "angular-in-memory-web-api": "^0.11.0",
+    "codelyzer": "^5.1.2",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~3.3.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "protractor": "~7.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~3.9.6"
+  }
 }
