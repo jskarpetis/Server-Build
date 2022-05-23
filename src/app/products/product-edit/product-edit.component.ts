@@ -60,15 +60,6 @@ export class ProductEditComponent implements OnInit {
     // this.getProduct(id);
   }
 
-  
-  // We dont use this now because we pre-fetch the data inside ngOnInit()
-  // getProduct(id: number): void {
-  //   this.productService.getProduct(id).subscribe({
-  //     next: product => this.onProductRetrieved(product),
-  //     error: err => this.errorMessage = err
-  //   });
-  // }
-
   onProductRetrieved(product: Product): void {
     this.product = product;
 

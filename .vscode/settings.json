@@ -1,12 +1,10 @@
 {
-  "files.autoSave": "afterDelay",
-  "html.format.wrapAttributes": "force-aligned",
-  "cSpell.words": [
-    "codelyzer",
-    "devkit",
-    "jasminewd",
-    "minlength",
-    "Skarpetis"
-  ],
-  "angular.enable-strict-mode-prompt": false
+  "cSpell.words": ["Mantics", "searchresults", "subtittle"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+  // "[html]": {
+  //   "editor.defaultFormatter": "vscode.html-language-features"
+  // }
 }
