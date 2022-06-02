@@ -58,6 +58,8 @@ var rsaKey = {
 
 // These are serving as our in memory database
 
+var refreshTokens = [];
+
 var accessTokens = [];
 
 var codes = {};
@@ -149,6 +151,38 @@ app.post("/login", function (req, res) {
         return;
       }
     }
+  }
+});
+
+app.post("/refresh_authorize", (req, res) => {
+  var body = req.body;
+  var token = body.refreshToken;
+
+  var headers = req.headers;
+  client_id = headers["application-id"];
+  var client = getClient(client_id);
+
+  if (!client) {
+    res.status(404).json({
+      status: 404,
+      statusText: "Not Found",
+      error: {
+        errno: req.errno,
+        message: "Unknown client",
+      },
+    });
+    return;
+  } else if (token) {
+    var parsedUrl = buildUrl(authServer.tokenEndpoint, {
+      clientId: client_id,
+      refreshToken: token,
+    });
+
+    res.status(200).json({
+      parsedUrl: parsedUrl,
+    });
+
+    res.redirect(parsedUrl);
   }
 });
 
@@ -304,6 +338,12 @@ app.get("/token", function (req, res) {
         scope: authorization_query.scope,
       });
 
+      // We create the refreshToken
+      var refreshToken = randomstring.generate();
+
+      // Saving said refresh token to in memory db
+      refreshTokens[refreshToken] = { clientId: clientId };
+
       var token_response = {
         access_token: access_token,
         token_type: "Bearer",
@@ -318,6 +358,7 @@ app.get("/token", function (req, res) {
       res.status(200).json(token_response);
       return;
     }
+  } else if (grant_type === "refresh_token") {
   } else {
     res.status(400).json({
       status: 400,
