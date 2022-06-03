@@ -23,18 +23,20 @@ var authServer = {
 // client information
 var clients = [
   {
-    client_Id: "3104EWFB72CC-C30B-4C35-E082-3FD68C65WEWE40DE",
+    clientId: "3104EWFB72CC-C30B-4C35-E082-3FD68C65WEWE40DE",
     userGroups: [
       {
         userGroupId: "CRGE32-HIOKE33-4223ERG",
         users: [
           {
+            userId: "1",
             username: "jskarpetis",
             password: "koko1234",
             userType: "customer",
             scope: "products",
           },
           {
+            userId: "2",
             username: "admin",
             password: "admin",
             userType: "admin",
@@ -58,8 +60,6 @@ var rsaKey = {
 
 // These are serving as our in memory database
 
-var refreshTokens = [];
-
 var accessTokens = [];
 
 var codes = {};
@@ -72,7 +72,7 @@ var logins = {};
 var getClient = function (clientId) {
   // Trying to find the clientId in the clients list
   return __.find(clients, function (client) {
-    return client.client_Id == clientId;
+    return client.clientId == clientId;
   });
 };
 
@@ -82,12 +82,17 @@ var getUserGroupId = (client, userGroupId) => {
   });
 };
 
+var findRefreshToken = (requestToken) => {
+  return __.find(accessTokens, (token) => {
+    return token.refreshToken === requestToken;
+  });
+};
+
 app.get("/", function (req, res) {});
 
 app.post("/login", function (req, res) {
-  var headers = req.headers;
-  client_id = headers["application-id"];
-  var client = getClient(client_id);
+  clientId = req.headers["application-id"];
+  var client = getClient(clientId);
 
   if (!client) {
     res.status(404).json({
@@ -101,9 +106,9 @@ app.post("/login", function (req, res) {
     return;
   } else {
     var userGroupId = req.body.userGroupId;
-    var request_userGroup = getUserGroupId(client, userGroupId);
+    var requestUserGroup = getUserGroupId(client, userGroupId);
 
-    if (!request_userGroup) {
+    if (!requestUserGroup) {
       res.status(404).json({
         status: 404,
         statusText: "Not Found",
@@ -117,7 +122,7 @@ app.post("/login", function (req, res) {
       var username = req.body.userName;
       var password = req.body.passWord;
 
-      var user = __.find(request_userGroup.users, (user) => {
+      var user = __.find(requestUserGroup.users, (user) => {
         return user.username === username && user.password === password;
       });
 
@@ -139,7 +144,7 @@ app.post("/login", function (req, res) {
         var url = buildUrl(authServer.authorizationEndpoint, {
           loginId,
           approve: true,
-          response_type: "code",
+          responseType: "code",
           scope,
         });
         // console.log("\n");
@@ -155,12 +160,8 @@ app.post("/login", function (req, res) {
 });
 
 app.post("/refresh_authorize", (req, res) => {
-  var body = req.body;
-  var token = body.refreshToken;
-
-  var headers = req.headers;
-  client_id = headers["application-id"];
-  var client = getClient(client_id);
+  clientId = req.headers["application-id"];
+  var client = getClient(clientId);
 
   if (!client) {
     res.status(404).json({
@@ -172,17 +173,40 @@ app.post("/refresh_authorize", (req, res) => {
       },
     });
     return;
-  } else if (token) {
-    var parsedUrl = buildUrl(authServer.tokenEndpoint, {
-      clientId: client_id,
-      refreshToken: token,
-    });
+  } else {
+    var requestRefreshToken = req.body.refreshToken;
 
-    res.status(200).json({
-      parsedUrl: parsedUrl,
-    });
-
-    res.redirect(parsedUrl);
+    if (!requestRefreshToken) {
+      res.status(400).json({
+        status: 400,
+        statusText: "BAD_REQUEST",
+        error: {
+          errno: req.errno,
+          message: "Unsupported Request",
+        },
+      });
+      return;
+    } else {
+      var savedAccessToken = findRefreshToken(requestRefreshToken);
+      if (!savedAccessToken) {
+        res.status(405).json({
+          status: 405,
+          statusText: "Method Not Allowed",
+          error: {
+            errno: req.errno,
+            message: "Refresh token doesn't exist",
+          },
+        });
+        return;
+      } else {
+        var grandType = "refresh_token";
+        var parsedUrl = buildUrl(authServer.tokenEndpoint, {
+          grandType: grandType,
+          refreshToken: requestRefreshToken,
+        });
+        res.redirect(parsedUrl);
+      }
+    }
   }
 });
 
@@ -190,10 +214,10 @@ app.post("/refresh_authorize", (req, res) => {
 app.get("/authorize", function (req, res) {
   // Checking if the login id exists to avoid someone hitting the endpoint on its own
   var loginId = req.query.loginId;
-  var loggedUserExists = logins[loginId];
+  var loginRequest = logins[loginId];
   delete logins[loginId];
 
-  if (!loggedUserExists) {
+  if (!loginRequest) {
     res.status(405).json({
       status: 405,
       statusText: "Method Not Allowed",
@@ -204,11 +228,10 @@ app.get("/authorize", function (req, res) {
     });
     return;
   } else {
-    // this could be the user session as well
-    var reqid = randomstring.generate(8); // This is the request id
+    var reqid = randomstring.generate(12); // This is the request id
     requests[reqid] = {
       approve: req.query.approve,
-      response_type: "code",
+      responseType: "code",
       scope: req.query.scope,
     };
     var redirect_url = buildUrl(authServer.approveEndpoint, { reqid: reqid });
@@ -216,6 +239,7 @@ app.get("/authorize", function (req, res) {
     // console.log("Requests -> ", requests);
     // console.log("Codes -> ", codes);
     // console.log("Logins -> ", logins);
+    // console.log("Redirect_Url -> ", redirect_url);
     // console.log("Access Tokens -> ", accessTokens);
     res.redirect(redirect_url);
     return;
@@ -245,17 +269,17 @@ app.get("/approve", function (req, res) {
   }
   // If req.body.approve exists
   if (query.approve) {
-    if (query.response_type == "code") {
+    if (query.responseType == "code") {
       // Here is the randomly generated 8 digit authorization code we return to the client
       var code = randomstring.generate(8);
       // Storing the key: code with the request parameters as object value
       codes[code] = query;
 
-      var grant_type = "authorization_code";
+      var grandType = "authorization_code";
       // Building the redirect uri that the client sent, with the information the client sent
       var urlParsed = buildUrl(authServer.tokenEndpoint, {
         code: code,
-        grant_type: grant_type,
+        grandType: grandType,
       });
       // console.log("\n");
       // console.log("Requests -> ", requests);
@@ -288,14 +312,14 @@ app.get("/approve", function (req, res) {
 
 // Token endpoint
 app.get("/token", function (req, res) {
-  // Checking the grant_type now
+  // Checking the grandType now
   // If authorization_code
-  if (req.query.grant_type == "authorization_code") {
+  if (req.query.grandType == "authorization_code") {
     var code = req.query.code;
     // If we find the code
     if (code) {
-      var authorization_query = codes[code];
-      if (!authorization_query) {
+      var authorizationQuery = codes[code];
+      if (!authorizationQuery) {
         res.status(405).json({
           status: 405,
           statusText: "Method Not Allowed",
@@ -308,7 +332,7 @@ app.get("/token", function (req, res) {
       }
       // Deletion to avoid the code randomly being used in the future (security)
       delete codes[code];
-      // console.log("Auth query", authorization_query);
+      // console.log("Auth query", authorizationQuery);
       // Generating our json web token (JWT)
       var header = { typ: "JWT", alg: rsaKey.alg, kid: rsaKey.kid };
       // Creating the payload
@@ -319,7 +343,7 @@ app.get("/token", function (req, res) {
         iat: Math.floor(Date.now() / 1000),
         exp: Math.floor(Date.now() / 1000) + 5 * 60,
         jti: randomstring.generate(8),
-        scope: authorization_query.scope, // Scope
+        scope: authorizationQuery.scope, // Scope
       };
 
       var privateKey = jose.KEYUTIL.getKey(rsaKey);
@@ -331,23 +355,24 @@ app.get("/token", function (req, res) {
         privateKey
       );
 
+      // We create the refreshToken
+      var refreshToken = randomstring.generate();
+
       // save the access token created, to a database in production (in memory database here)
       // If the protected resource wants to validate if a token that its receiving is still valid it can ask the server to look into the accessTokens and see if it is still valid
       accessTokens.push({
         access_token: access_token,
-        scope: authorization_query.scope,
+        scope: authorizationQuery.scope,
+        refreshToken: refreshToken,
       });
 
-      // We create the refreshToken
-      var refreshToken = randomstring.generate();
-
       // Saving said refresh token to in memory db
-      refreshTokens[refreshToken] = { clientId: clientId };
 
       var token_response = {
         access_token: access_token,
         token_type: "Bearer",
-        scope: authorization_query.scope,
+        scope: authorizationQuery.scope,
+        refreshToken: refreshToken,
       };
       // console.log("\n");
       // console.log("Requests -> ", requests);
@@ -358,7 +383,103 @@ app.get("/token", function (req, res) {
       res.status(200).json(token_response);
       return;
     }
-  } else if (grant_type === "refresh_token") {
+  } else if (req.query.grandType === "refresh_token") {
+    clientId = req.headers["application-id"];
+    var client = getClient(clientId);
+
+    if (!client) {
+      res.status(404).json({
+        status: 404,
+        statusText: "Not Found",
+        error: {
+          errno: req.errno,
+          message: "Unknown client",
+        },
+      });
+      return;
+    } else {
+      var requestRefreshToken = req.query.refreshToken;
+
+      if (!requestRefreshToken) {
+        res.status(400).json({
+          status: 400,
+          statusText: "BAD_REQUEST",
+          error: {
+            errno: req.errno,
+            message: "Unsupported Request 2",
+          },
+        });
+        return;
+      } else {
+        var savedAccessToken = findRefreshToken(requestRefreshToken);
+        if (!savedAccessToken) {
+          res.status(405).json({
+            status: 405,
+            statusText: "Method Not Allowed",
+            error: {
+              errno: req.errno,
+              message: "Refresh token doesn't exist",
+            },
+          });
+          return;
+        } else {
+          var index = __.indexOf(accessTokens, savedAccessToken);
+          var savedScope = savedAccessToken.scope;
+          if (index > -1) {
+            accessTokens.splice(index);
+          }
+
+          var header = { typ: "JWT", alg: rsaKey.alg, kid: rsaKey.kid };
+          // Creating the payload
+          var payload = {
+            iss: "http://localhost:9003/", // Issuer
+            sub: "E-shop user",
+            aud: "http://localhost:9002/", // Audience
+            iat: Math.floor(Date.now() / 1000),
+            exp: Math.floor(Date.now() / 1000) + 5 * 60,
+            jti: randomstring.generate(8),
+            scope: savedScope, // Scope
+          };
+
+          var privateKey = jose.KEYUTIL.getKey(rsaKey);
+          // This time instead of verifying we are signing the access token
+          var access_token = jose.jws.JWS.sign(
+            header.alg,
+            JSON.stringify(header),
+            JSON.stringify(payload),
+            privateKey
+          );
+
+          // We create the refreshToken
+          var refreshToken = randomstring.generate();
+
+          // save the access token created, to a database in production (in memory database here)
+          // If the protected resource wants to validate if a token that its receiving is still valid it can ask the server to look into the accessTokens and see if it is still valid
+          accessTokens.push({
+            access_token: access_token,
+            scope: savedScope,
+            refreshToken: refreshToken,
+          });
+
+          // Saving said refresh token to in memory db
+
+          var token_response = {
+            access_token: access_token,
+            token_type: "Bearer",
+            scope: savedScope,
+            refreshToken: refreshToken,
+          };
+          // console.log("\n");
+          // console.log("Requests -> ", requests);
+          // console.log("Codes -> ", codes);
+          // console.log("Logins -> ", logins);
+          // console.log("Access Tokens -> ", accessTokens);
+          // Sending out the response
+          res.status(200).json(token_response);
+          return;
+        }
+      }
+    }
   } else {
     res.status(400).json({
       status: 400,
@@ -401,11 +522,7 @@ var server = app.listen(9003, "localhost", function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log(
-    "Carved Rock Authorization Server is listening at http://%s:%s",
-    host,
-    port
-  );
+  console.log("Authorization Server is listening at http://%s:%s", host, port);
 });
 
 // Security Threats
