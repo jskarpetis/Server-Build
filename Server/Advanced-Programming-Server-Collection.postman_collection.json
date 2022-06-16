@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "a916734f-be3b-445b-9c58-b7cbfc3d5494",
+		"name": "Advanced-Programming-Server-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18407559"
+	},
+	"item": [
+		{
+			"name": "Authenticate_User_Admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Application-Id",
+						"value": "3104EWFB72CC-C30B-4C35-E082-3FD68C65WEWE40DE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"admin\",\r\n    \"passWord\": \"admin\",\r\n    \"userGroupId\": \"CRGE32-HIOKE33-4223ERG\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9003/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate_User_Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Application-Id",
+						"value": "3104EWFB72CC-C30B-4C35-E082-3FD68C65WEWE40DE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"jskarpetis\",\r\n    \"passWord\": \"koko1234\",\r\n    \"userGroupId\": \"CRGE32-HIOKE33-4223ERG\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9003/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorize_User_Via_Refresh_Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Application-Id",
+						"value": "3104EWFB72CC-C30B-4C35-E082-3FD68C65WEWE40DE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"boSonbzD3k2adiwFCWqbLwyqWgcEY4W4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9003/refresh_authorize",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"refresh_authorize"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
