@@ -47,7 +47,19 @@ var getAccessToken = function (req, res, next) {
 
   // Checking the token signature
   var pubKey = jose.KEYUTIL.getKey(rsaKey);
-  var signatureValid = jose.jws.JWS.verify(inToken, pubKey, ["RS256"]);
+  try {
+    var signatureValid = jose.jws.JWS.verify(inToken, pubKey, ["RS256"]);
+  } catch (err) {
+    res.status(400).json({
+      status: 400,
+      statusText: "BAD_REQUEST",
+      error: {
+        errno: req.errno,
+        message: "Invalid access token",
+        resource_error: err,
+      },
+    });
+  }
 
   // If the token signature is valid
   if (signatureValid) {
