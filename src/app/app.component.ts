@@ -6,7 +6,8 @@ import { AuthService } from './user/auth.service';
 @Component({
   selector: 'pm-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [],
 })
 export class AppComponent {
   pageTitle = 'Angular Routing Course';

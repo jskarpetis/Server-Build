@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  URL: "http://localhost:9003",
+  URL_AUTH: "http://localhost:9003",
+  URL_AUTH_PREFIX: '/auth',
+  USERGROUP_ID: 'CRGE32-HIOKE33-4223ERG'
 };
 
 /*

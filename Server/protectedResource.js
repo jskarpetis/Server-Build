@@ -170,6 +170,17 @@ app.get(
           imageUrl: "assets/images/xbox-controller.png",
           category: "Gaming",
         },
+        {
+          id: 11,
+          productName: "Video Game Controller",
+          productCode: "GMG-0042",
+          releaseDate: "October 15, 2018",
+          description: "Standard two-button video game controller",
+          price: 35.95,
+          starRating: 4.6,
+          imageUrl: "assets/images/xbox-controller.png",
+          category: "Gaming",
+        },
       ];
     }
 
