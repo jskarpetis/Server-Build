@@ -87,7 +87,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"refreshToken\": \"boSonbzD3k2adiwFCWqbLwyqWgcEY4W4\"\r\n}",
+					"raw": "{\r\n    \"refreshToken\": \"lPAUMsokLChxAYDHvpSY0rVIj17RNJr3\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -103,6 +103,174 @@
 					"port": "9003",
 					"path": [
 						"refresh_authorize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImF1dGhzZXJ2ZXIifQ.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwMDMvIiwic3ViIjoiRS1zaG9wIHVzZXIiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjkwMDIvIiwiaWF0IjoxNjU1NzUyMTc0LCJleHAiOjE2NTU3NTI0NzQsImp0aSI6IkxVRXhpeVN6Iiwic2NvcGUiOlsicHJvZHVjdHMiLCIiXX0.oqntN_wna6FVSMEozdoy2XvQ4SU0eLY2N1DIqY1hsbgW6C-82NO7F6Vu0nxMiW4aGROA58en0jIFrL-xqsrLyG4zUNLk0N0iXAn34IZmeS_kAQvttQYsdNTVpeER-ALedQ5Wyq5EwVMqEL9rWzTRNe-xGCPZFj4dvuFfVj3FuqxPPliASSbLo5tMELrz23jPgsb0dVp-Bs1bSHOLomFCVGqOioh3jzDutyMbXbCQxItF-VlUwFlmw0LGRIFIVLmw0pt5DoRiaLDwGAmP3jQ3yeAPp1fJwuc3r9ABzCch_BUdPusiWjSS3m_4qpMFbGgHYCrpMTbGM8LOKEh9wGKl5A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9002/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Product_Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImF1dGhzZXJ2ZXIifQ.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwMDMvIiwic3ViIjoiRS1zaG9wIHVzZXIiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjkwMDIvIiwiaWF0IjoxNjU1NzUyMTc0LCJleHAiOjE2NTU3NTI0NzQsImp0aSI6IkxVRXhpeVN6Iiwic2NvcGUiOlsicHJvZHVjdHMiLCIiXX0.oqntN_wna6FVSMEozdoy2XvQ4SU0eLY2N1DIqY1hsbgW6C-82NO7F6Vu0nxMiW4aGROA58en0jIFrL-xqsrLyG4zUNLk0N0iXAn34IZmeS_kAQvttQYsdNTVpeER-ALedQ5Wyq5EwVMqEL9rWzTRNe-xGCPZFj4dvuFfVj3FuqxPPliASSbLo5tMELrz23jPgsb0dVp-Bs1bSHOLomFCVGqOioh3jzDutyMbXbCQxItF-VlUwFlmw0LGRIFIVLmw0pt5DoRiaLDwGAmP3jQ3yeAPp1fJwuc3r9ABzCch_BUdPusiWjSS3m_4qpMFbGgHYCrpMTbGM8LOKEh9wGKl5A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9002/products/WEFWE-MOKH-QWOU-VUIJGM-WEPOI",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"products",
+						"WEFWE-MOKH-QWOU-VUIJGM-WEPOI"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register_New_Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImF1dGhzZXJ2ZXIifQ.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwMDMvIiwic3ViIjoiRS1zaG9wIHVzZXIiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjkwMDIvIiwiaWF0IjoxNjU1NzUzNjUyLCJleHAiOjE2NTU3NTM5NTIsImp0aSI6IllxbkptN05OIiwic2NvcGUiOlsicHJvZHVjdHMiLCIiXX0.I-qbQulmPOOd9F4ITMMCxrXXzmo1pPh_V3TsZFr3xJ39vkG8_kIiNtZDxorY6QMNWjP37tjpFneMxd3w6zB0SpJPUJiTk-5B3UnN-vHOYZjhgHNoxn-HHhVWgkKnyCcFTk3D-g5yFlX9EKYsKBDQH2eh7VJJJP8U6R7kL97sXmRdCmebndOD375ccYRJiJe8BmBnySwk5q7yqkHNdCdnsp2HBLYqRrNtGUyXpz2XtcbP0amsKvO5MR17tdMJfjyj-bGgr4Vn5HSfbOhMJmMpXKwqqwq43LXkLCna_CHzqjTJNm_Yxv36KTW4RL_zZQWfJ6oQl2nGDZRCiLIVyoGuwQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"Grass cutter\",\r\n    \"productCode\": \"TBXRG-0023422\",\r\n    \"releaseDate\": \"May 19, 2022\",\r\n    \"description\": \"A large grass cutter\",\r\n    \"price\": 30.12,\r\n    \"starRating\": 4.7,\r\n    \"category\": \"Gardening Tools\",\r\n    \"tags\": [\"rake\", \"leaf\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/products/register-new-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"products",
+						"register-new-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImF1dGhzZXJ2ZXIifQ.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwMDMvIiwic3ViIjoiRS1zaG9wIHVzZXIiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjkwMDIvIiwiaWF0IjoxNjU1NzU1MTU5LCJleHAiOjE2NTU3NTU0NTksImp0aSI6IjZNTDhkRGhsIiwic2NvcGUiOlsicHJvZHVjdHMiLCIiXX0.QlYJqdwN5vShgBBJYbuM1FWyQuJaynNso2q9W_9NVOj9EuBIuUsoAIBjxPCKLCD6RHXVzfpP7J8NOPhPu5FMOc9H85UHR2XAYl2oTFbFVlOiwqGsfDoS4pE-9hVk6FSmDkXw_pnobthtHE8dzgKM-Wjd_55JndcPwRSx_mIj3-_pGu3Sf29gGSznIELfTA8_wL0qlluvlZzSBzifj-dB-dHtspJI50uzll31jawfeCCAFxRkgFkhizXGUSirPZqx2B4LyPzTkWYr_03X3uOTpTspuJGmU2eKMFra-GNMO157iuo7WmH-hqUr25KLa9QZGOcW3TMh1Xz0bVNjCP23zw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"QWMBGK-TYIOS-ZJNGB-YOIUTM\",\r\n    \"productName\": \"Video Game Controller version 23\",\r\n    \"starRatering\": 4.4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9002/products/update-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"products",
+						"update-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImF1dGhzZXJ2ZXIifQ.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwMDMvIiwic3ViIjoiRS1zaG9wIHVzZXIiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjkwMDIvIiwiaWF0IjoxNjU1NzU1NDQwLCJleHAiOjE2NTU3NTU3NDAsImp0aSI6IlJaWVVCeE50Iiwic2NvcGUiOlsicHJvZHVjdHMiLCIiXX0.LJWGQJiORLe4toINdeswjfNSKBOqOOOE_2aAkFe4Z3gNAtPXHY24ODev6-7WqO255lFeqM2iWQ_TePa2_iiZ37LYU-mq0FaTVzby1JfPXY62vYy447sbJy7sXgfjS6NN4uLDH2UUShiIJA2VxkOg0RTGcG9GFWi8-NpTc8xoTRx272UGMQ2F703e4kE2OVwJM4IQaHKCJr04tD3TUU7cAwXzd70O3D3jtvbj8wL6Q1PuTmdjWSVbiWNBRkDLmOvulm6XuvuIPsh6XW_04_WKbunPLnJa5x3SJ3aTS8psJwmkV8cJWuvG2ziXduhhOXaTpTcrTnny7Mbfxu0Ia9l10w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9002/products/delete-product/WEFWB-GTRMNKH-QWIURMG-WEOKF-WEFGKJN",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9002",
+					"path": [
+						"products",
+						"delete-product",
+						"WEFWB-GTRMNKH-QWIURMG-WEOKF-WEFGKJN"
 					]
 				}
 			},
