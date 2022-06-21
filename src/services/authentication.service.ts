@@ -1,6 +1,9 @@
 import { HttpHeaders } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 import { AuthenticationAPI } from "src/eshopAPI/api/authenticationAPI";
-
+@Injectable({
+    providedIn: 'root',
+  })
 export class AuthenticationService {
     
     constructor(private api: AuthenticationAPI) {}
@@ -22,6 +25,7 @@ export class AuthenticationService {
         return new Promise((resolve, reject) => {
             this.api.authenticateAdmin(input,headers)
             .then((result) => {
+                
                 resolve(result);
             })
             .catch((error) => {

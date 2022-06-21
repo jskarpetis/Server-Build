@@ -1,0 +1,5 @@
+<form novalidate [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <input id="login-username-input" type="text" formControlName="userName">
+    <input id="login-password-input" type="password" formControlName="passWord">
+    <button type="submit" [disabled]="!loginForm.valid" ></button>
+</form>

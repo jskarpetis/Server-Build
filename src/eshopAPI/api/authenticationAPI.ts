@@ -13,7 +13,7 @@ export class AuthenticationAPI {
     public authenticateAdmin(input:any , headers: HttpHeaders = null){
         return this.http2Eshop.post({
             headers: headers,
-            path: `${Settings.URL_AUTH_PREFIX}/signin`,
+            path: `${Settings.URL_AUTH_PREFIX}`,
             input: input,
         })
     }

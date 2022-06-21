@@ -11,7 +11,7 @@ var app = express();
 
 app.use(bodyParser.urlencoded({ extended: true })); // support form-encoded bodies (for bearer tokens)
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({origin: ["http://localhost:4200/"]}));
 
 var resource = {
   name: "E-shop",

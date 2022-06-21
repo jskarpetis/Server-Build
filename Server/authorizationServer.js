@@ -7,11 +7,12 @@ var querystring = require("querystring");
 var jose = require("jsrsasign");
 var __ = require("underscore");
 __.string = require("underscore.string");
-
+var cors = require("cors");
 var app = express();
 
 app.use(bodyParser.json());
-
+app.use(cors());
+const cors_options = {origin: "*"};
 // authorization server information
 var authServer = {
   baseUrl: "http://localhost:9003",
@@ -90,8 +91,9 @@ var findRefreshToken = (requestToken) => {
 
 app.get("/", function (req, res) {});
 
-app.post("/login", function (req, res) {
+app.post("/login",cors(), function (req, res) {
   clientId = req.headers["application-id"];
+  
   var client = getClient(clientId);
 
   if (!client) {
@@ -152,6 +154,7 @@ app.post("/login", function (req, res) {
         // console.log("Codes -> ", codes);
         // console.log("Logins -> ", logins);
         // console.log("Access Tokens -> ", accessTokens);
+        // res.set("Access-Control-Allow-Origin","*");
         res.redirect(url);
         return;
       }
