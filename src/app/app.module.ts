@@ -17,6 +17,7 @@ import { AppRootingModule } from './app-rooting.module';
 import { eshopApiModule } from 'src/eshopAPI/eshopAPI.module';
 import { LoginModule } from './pages/init/login/login.module';
 import { InitPresenter } from './pages/init/init.presenter';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -30,6 +31,7 @@ import { InitPresenter } from './pages/init/init.presenter';
     // ProductModule, // We are going to lazy load this productModule and we must not have a reference to it in the main module
     // MessageModule,
     eshopApiModule,
+    FormsModule,
     LoginModule,
     HttpClientModule,
     AppRootingModule // When this is imported all its exports are available to the declared components, also this should be imported last

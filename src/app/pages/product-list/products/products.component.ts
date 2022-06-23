@@ -4,7 +4,7 @@ import { takeUntil } from "rxjs/internal/operators";
 import { GetProductsResponse } from "src/eshopAPI/models/GetProductsResponse";
 import { Values } from "src/eshopAPI/settings";
 import { BaseComponent } from "src/shared/base.component";
-import { ProductsPresenter } from "./products.presenter";
+import { ProductsPresenter } from "../products.presenter";
 
 
 @Component({
@@ -15,7 +15,13 @@ export class ProductsComponent extends BaseComponent implements OnInit {
 
     private _products: GetProductsResponse ;
 
-    
+    set products(value:GetProductsResponse){
+        this._products = value;
+    }
+
+    get products(){
+        return this._products;
+    }
 
     constructor(
         public presenter: ProductsPresenter,
@@ -38,6 +44,7 @@ export class ProductsComponent extends BaseComponent implements OnInit {
 
     async allProducts(response: any){
         console.log(response);
+        this.products = response.body;
     }
 }
 

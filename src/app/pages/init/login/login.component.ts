@@ -16,7 +16,7 @@ import { GlobalsService } from "src/services/globals.service";
 export class LoginComponent extends BaseComponent implements OnInit {
     loginForm: FormGroup;
     errorMessage: string;
-
+    pageTitle = 'Log In';
     constructor(
         public presenter: InitPresenter,
         private fb: FormBuilder,
