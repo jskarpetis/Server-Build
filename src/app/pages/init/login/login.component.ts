@@ -4,8 +4,9 @@ import { Router } from "@angular/router";
 import { takeUntil } from 'rxjs/internal/operators';
 import { BaseComponent } from "src/shared/base.component";
 import { InitPresenter } from "../init.presenter";
-import { Constants } from 'src/eshopAPI/settings';
+import { Constants, Values } from 'src/eshopAPI/settings';
 import Settings = Constants.Settings;
+import { GlobalsService } from "src/services/globals.service";
 
 @Component({
   templateUrl: './login.component.html',
@@ -19,7 +20,8 @@ export class LoginComponent extends BaseComponent implements OnInit {
     constructor(
         public presenter: InitPresenter,
         private fb: FormBuilder,
-        public router: Router
+        public router: Router,
+        public globalService: GlobalsService
     ) {
         super(presenter, router);
     }
@@ -56,6 +58,6 @@ export class LoginComponent extends BaseComponent implements OnInit {
     }
 
     async onLoginSubmitted(response : any) {
-        console.log(response);
+        this.router.navigateByUrl('/products');
     }
 }

@@ -15,6 +15,7 @@ export class AuthenticationAPI {
             headers: headers,
             path: `${Settings.URL_AUTH_PREFIX}`,
             input: input,
+            isAuth: true 
         })
     }
 }

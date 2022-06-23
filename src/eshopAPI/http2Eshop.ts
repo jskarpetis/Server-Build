@@ -8,7 +8,7 @@ import Settings = Constants.Settings;
 export class Http2Eshop{
     constructor(
         private http: HttpClient,
-        private router:Router
+        private router:Router,
     ){}
     
     private getHeaders(
@@ -67,7 +67,8 @@ export class Http2Eshop{
             request.input,
             request.headers
         );
-        const urlToCall: string = Constants.Settings.SERVER + request.path;
+        const urlToCall: string = request.isAuth ? Constants.Settings.SERVER_AUTH + request.path : 
+                                                   Constants.Settings.SERVER + request.path;
         const options = {
             body: request.input,
             headers: result.headers,
@@ -121,8 +122,23 @@ export class Http2Eshop{
         })
     }
 
+    public get(request: IHttp2EshopReq): Promise<any> {
+        request.method = 'GET';
+        return this.request(request);
+    }
+
     public post(request: IHttp2EshopReq): Promise<any> {
         request.method = 'POST';
+        return this.request(request);
+    }
+
+    public delete(request: IHttp2EshopReq): Promise<any> {
+        request.method = 'DELETE';
+        return this.request(request);
+    }
+
+    public patch(request: IHttp2EshopReq): Promise<any> {
+        request.method = 'PATCH';
         return this.request(request);
     }
 }
@@ -133,5 +149,5 @@ export interface IHttp2EshopReq {
     headers?:HttpHeaders;
     path?:string;
     queryParams?: any;
-
+    isAuth?:boolean;
 }
