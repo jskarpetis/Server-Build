@@ -12,5 +12,10 @@ export interface IProduct {
     starRating?: number;
     imageUrl?:string;
     category?:string;
-    tages?: Array<string>;
+    tags?: Array<string>;
+}
+
+export interface IProductResolved{
+    product: IProduct;
+    error?: any;
 }

@@ -25,11 +25,58 @@ export class ProductService {
     }
 
     public getProductById(
-        headers: HttpHeaders = null,
-        queryParams: any
-    ): Promise<IProduct> {
+        queryParams: any,
+        headers: HttpHeaders = null
+    ): Promise<any> {
         return new Promise((resolve,reject) => {
-            this.api.getProductById(headers,queryParams)
+            this.api.getProductById(headers,queryParams).then((result) => {
+                resolve(result);
+            })
+            .catch((error) => {
+                reject(error);
+            })
+        })
+    }
+
+    public registerNewProduct(
+        input: IProduct,
+        headers: HttpHeaders = null
+    ) : Promise<any> {
+        return new Promise((resolve,reject) => {
+            this.api.registerNewProduct(input,headers).then((result) => {
+                resolve(result);
+            })
+            .catch((error) => {
+                reject(error);
+            })
+        })
+    }
+
+    public updateProduct(
+        input: IProduct,
+        headers: HttpHeaders = null
+    ) : Promise<any> {
+        return new Promise((resolve,reject) => {
+            this.api.updateProduct(input,headers).then((result) => {
+                resolve(result);
+            })
+            .catch((error) => {
+                reject(error);
+            })
+        })
+    }
+
+    public deleteProduct(
+        queryParams:any,
+        headers: HttpHeaders = null
+    ) : Promise<any> {
+        return new Promise((resolve, reject) => {
+            this.api.deleteProduct(queryParams,headers).then((result) => {
+                resolve(result);
+            })
+            .catch((error)=> {
+                reject(error);
+            })
         })
     }
 }

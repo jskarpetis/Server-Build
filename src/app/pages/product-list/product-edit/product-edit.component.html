@@ -1,0 +1,57 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+
+    <div class="card-body">
+        <div class="wizard">
+            <a>
+                Basic Information <span [ngClass]="'fa fa-exclamation'"></span>
+            </a>
+            <a>
+                Search Tags <span [ngClass]="'fa fa-exclamation'"></span>
+            </a>
+        </div>
+    </div>
+    <form [formGroup]="editProduct" novalidate (ngSubmit)="saveProduct()" autocomplete="off">
+        <fieldset>
+            <legend>Edit Product Information</legend>
+            <div class="form-group row">
+                <label for="productNameId">Edit Name</label>
+                <div class="col-md-8">
+                    <input type="text" 
+                        class="form-control"
+                        id="productNameId"
+                        placeholder="Name (required)"
+                        required
+                        minlength="3"
+                        formControlName="productName">
+                </div>
+            </div>
+        </fieldset>
+        <div class="row mb-2">
+            <div class="col-md-4">
+                <button class="btn btn-primary mr-3"
+                    style="width:80px;"
+                    type="submit"
+                    title="Save your entered data">
+                    Save
+                </button>
+                <button class="btn btn-primary mr-3"
+                    style="width:80px;"
+                    type="button"
+                    title="Cancel your edits"
+                    (click)="saveProduct()">
+                    Cancel
+                </button>
+                <button class="btn btn-primary mr-3"
+                    style="width:80px;"
+                    type="button"
+                    title="Delete this product"
+                    (click)="saveProduct()">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

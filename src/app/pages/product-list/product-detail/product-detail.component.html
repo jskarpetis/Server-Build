@@ -1,0 +1,71 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+    </div>
+  
+    <div class="card-body">
+  
+      <div class="row">
+  
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-3">Name:</div>
+            <div class="col-md-6">{{product.productName}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Code:</div>
+            <div class="col-md-6">{{product.productCode}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Description:</div>
+            <div class="col-md-6">{{product.description}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Availability:</div>
+            <div class="col-md-6">{{product.releaseDate}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">5 Star Rating:</div>
+            <div class="col-md-6">
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Category:</div>
+            <div class="col-md-6">{{product.category}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Tags:</div>
+            <div class="col-md-6">{{product.tags}}</div>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <img class="center-block img-responsive"
+               [style.height.px]="150"
+               [style.margin.px]="2"
+               [src]="product.imageUrl"
+               [title]="product.productName">
+        </div>
+      </div>
+  
+      <div class="row mt-4">
+        <div class="col-md-4"> 
+          <!-- Here we notice that queryParamsHandling is used: We use it because when we click the back button of the details, we want the system to retain all the query parameters that we have given  -->
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px"
+                  queryParamsHandling="preserve">
+            <a class="fa fa-chevron-left" ></a> Back
+          </button>
+          <button class="btn btn-outline-primary"
+                  style="width:80px">
+            Edit
+          </button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}
+  </div>

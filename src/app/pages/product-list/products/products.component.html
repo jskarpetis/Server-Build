@@ -3,12 +3,10 @@
       <div class="row">
         <div class="col-md-2">Filter by:</div>
         <div class="col-md-4">
-          <input type="text"
-                 [(ngModel)]="listFilter" />
+          <input type="text" />
         </div>
       </div>
-      <div class="row"
-           *ngIf="listFilter">
+      <div class="row">
         <div class="col-md-6">
           <h4>Filtered by:</h4>
         </div>
@@ -16,7 +14,7 @@
   
       <div class="table-responsive">
         <table class="table mb-0"
-               *ngIf="products && products.length">
+               *ngIf="products">
           <thead>
             <tr>
               <th>
@@ -45,7 +43,7 @@
               <td>
                 <!-- We need to read the parameter product.id to show its content to the site -->
                 <!-- Defining query parameters that will help us retain information that we don't want lost when the user does something. Example: For a search we want to retain the users filters when he is trying to find a product -->
-                <a>
+                <a (click)="ProductById(product.id)">
                   {{ product.productName }}
                 </a>
               </td>
@@ -58,7 +56,7 @@
               </td>
               <td>
                 <!-- Binding the button edit to the productEdit page  -->
-                <button class="btn btn-outline-primary btn-sm">
+                <button class="btn btn-outline-primary btn-sm" (click)="EditProduct(product.id)">
                   Edit
                 </button>
               </td>
@@ -66,6 +64,9 @@
           </tbody>
         </table>
       </div>
-  
+      
     </div>
+    <button (click)="AddProduct()">
+      add new product
+    </button>
   </div>
