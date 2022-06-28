@@ -11,6 +11,14 @@ export class Http2Eshop{
         private router:Router,
     ){}
     
+    /**
+     * 
+     * @param path path of the request , contains only the path after the Server path ==> http//localhost:port/path
+     * @param params query params
+     * @param data_ 
+     * @param headers extra headers of the request
+     * @returns the final headers and right formated urlParams of the request
+     */
     private getHeaders(
         path: string,
         params?: any,
@@ -53,7 +61,12 @@ export class Http2Eshop{
     
         return { headers: result, uRLSearchParams: getParams };
       }
-
+    
+    /**
+     * Format the request depending on needs of the server
+     * @param request 
+     * @returns Promise with the result of the request
+     */
     private request(request: IHttp2EshopReq): Promise<any> {
         const clearAuth = () => {
             Values.Token = null;
@@ -122,21 +135,41 @@ export class Http2Eshop{
         })
     }
 
+    /**
+     * Set GET method for incoming request
+     * @param request 
+     * @returns Formatted request with our parameters from settings and needed headers
+     */
     public get(request: IHttp2EshopReq): Promise<any> {
         request.method = 'GET';
         return this.request(request);
     }
 
+    /**
+     * Set POST method for incoming request
+     * @param request 
+     * @returns Formatted request with our parameters from settings and needed headers
+     */
     public post(request: IHttp2EshopReq): Promise<any> {
         request.method = 'POST';
         return this.request(request);
     }
 
+    /**
+     * Set DELETE method for incoming request
+     * @param request 
+     * @returns Formatted request with our parameters from settings and needed headers
+     */
     public delete(request: IHttp2EshopReq): Promise<any> {
         request.method = 'DELETE';
         return this.request(request);
     }
 
+    /**
+     * Set PATCH method for incoming request
+     * @param request 
+     * @returns Formatted request with our parameters from settings and needed headers
+     */
     public patch(request: IHttp2EshopReq): Promise<any> {
         request.method = 'PATCH';
         return this.request(request);

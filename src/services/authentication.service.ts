@@ -8,6 +8,11 @@ import { Values } from "src/eshopAPI/settings";
   })
 export class AuthenticationService {
     
+
+    /**
+     * @constructor
+     * @param {AuthenticationAPI} api
+     */
     constructor(private api: AuthenticationAPI) {}
 
     private __autoAuthInput: any;//AuthenticateAdminInput

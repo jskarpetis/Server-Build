@@ -10,7 +10,7 @@ import Settings = Constants.Settings;
 export class AuthenticationAPI {
     constructor(private http2Eshop: Http2Eshop) {}
     
-    public authenticateAdmin(input:any , headers: HttpHeaders = null){
+    public authenticateAdmin(input:AdminLoginInput , headers: HttpHeaders = null){
         return this.http2Eshop.post({
             headers: headers,
             path: `${Settings.URL_AUTH_PREFIX}`,

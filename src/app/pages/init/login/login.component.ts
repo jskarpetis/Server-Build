@@ -58,6 +58,8 @@ export class LoginComponent extends BaseComponent implements OnInit {
     }
 
     async onLoginSubmitted(response : any) {
-        this.router.navigateByUrl('/products');
+        if(response){
+            this.router.navigateByUrl('/products');
+        }
     }
 }

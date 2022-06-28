@@ -1,0 +1,942 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>apm documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">apm documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >Http2Eshop</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/eshopAPI/http2Eshop.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#get" >get</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getHeaders" >getHeaders</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#patch" >patch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#post" >post</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#request" >request</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/eshopAPI/http2Eshop.ts:8</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delete(request: <a href="../injectables/Http2Eshop.html" target="_self">IHttp2EshopReq</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/eshopAPI/http2Eshop.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set DELETE method for incoming request</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>request</td>
+                                    <td>
+                                                <code><a href="../injectables/Http2Eshop.html" target="_self" >IHttp2EshopReq</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Formatted request with our parameters from settings and needed headers</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="get"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>get</b></span>
+                        <a href="#get"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>get(request: <a href="../injectables/Http2Eshop.html" target="_self">IHttp2EshopReq</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/eshopAPI/http2Eshop.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set GET method for incoming request</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>request</td>
+                                    <td>
+                                                <code><a href="../injectables/Http2Eshop.html" target="_self" >IHttp2EshopReq</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Formatted request with our parameters from settings and needed headers</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHeaders"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getHeaders</b></span>
+                        <a href="#getHeaders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getHeaders(path: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, params?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, data_?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, headers?: <a href="https://angular.io/api/common/http/HttpHeaders" target="_blank">HttpHeaders</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/eshopAPI/http2Eshop.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>path</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>path of the request , contains only the path after the Server path ==&gt; http//localhost:port/path</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>query params</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>data_</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>headers</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/common/http/HttpHeaders" target="_blank" >HttpHeaders</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>extra headers of the request</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>literal type</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>the final headers and right formated urlParams of the request</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patch"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>patch</b></span>
+                        <a href="#patch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>patch(request: <a href="../injectables/Http2Eshop.html" target="_self">IHttp2EshopReq</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="173"
+                            class="link-to-prism">src/eshopAPI/http2Eshop.ts:173</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set PATCH method for incoming request</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>request</td>
+                                    <td>
+                                                <code><a href="../injectables/Http2Eshop.html" target="_self" >IHttp2EshopReq</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Formatted request with our parameters from settings and needed headers</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="post"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>post</b></span>
+                        <a href="#post"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>post(request: <a href="../injectables/Http2Eshop.html" target="_self">IHttp2EshopReq</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">src/eshopAPI/http2Eshop.ts:153</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set POST method for incoming request</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>request</td>
+                                    <td>
+                                                <code><a href="../injectables/Http2Eshop.html" target="_self" >IHttp2EshopReq</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Formatted request with our parameters from settings and needed headers</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="request"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>request</b></span>
+                        <a href="#request"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>request(request: <a href="../injectables/Http2Eshop.html" target="_self">IHttp2EshopReq</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/eshopAPI/http2Eshop.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Format the request depending on needs of the server</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>request</td>
+                                    <td>
+                                                <code><a href="../injectables/Http2Eshop.html" target="_self" >IHttp2EshopReq</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Promise with the result of the request</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { HttpClient, HttpHeaders, HttpParams } from &#x27;@angular/common/http&#x27;;
+import { Router } from &quot;@angular/router&quot;;
+import { Constants, Values } from &#x27;./settings&#x27;;
+import ESHeaders &#x3D; Constants.ESHeaders;
+import Settings &#x3D; Constants.Settings;
+@Injectable()
+export class Http2Eshop{
+    constructor(
+        private http: HttpClient,
+        private router:Router,
+    ){}
+    
+    /**
+     * 
+     * @param path path of the request , contains only the path after the Server path &#x3D;&#x3D;&gt; http//localhost:port/path
+     * @param params query params
+     * @param data_ 
+     * @param headers extra headers of the request
+     * @returns the final headers and right formated urlParams of the request
+     */
+    private getHeaders(
+        path: string,
+        params?: any,
+        data_?: any,
+        headers?: HttpHeaders,
+      ): { headers: HttpHeaders; uRLSearchParams: HttpParams } {
+        let result: HttpHeaders | undefined &#x3D; headers;
+        if (!result) result &#x3D; new HttpHeaders();
+    
+        let getParams &#x3D; new HttpParams();
+        if (data_) {
+          const json: any &#x3D; JSON.stringify(data_);
+        }
+        //NOT TO SET FROM OUTSIDE
+        // result &#x3D; result.append(TAConstants.TAHeaders.FILL_RESOURCES, &#x27;true&#x27;);
+        if (result.has(Constants.ESHeaders.CONTENT_TYPE) &#x3D;&#x3D;&#x3D; false) {
+          result.append(
+            Constants.ESHeaders.CONTENT_TYPE,
+            &#x27;application/json;charset&#x3D;utf-8&#x27;
+          );
+        }
+        // result &#x3D; result.append(&#x27;Allow-Control-Allow-Origin&#x27;, &#x27;http://localhost:4200/&#x27;);
+        // result &#x3D; result.append(&quot;Access-Control-Allow-Headers&quot;, &quot;Content-Type&quot;);
+        // result &#x3D; result.append(&quot;Access-Control-Allow-Methods&quot;, &quot;POST&quot;);
+        // result &#x3D; result.append(&#x27;Content-Type&#x27;, &#x27;multipart/form-data;&#x27;);
+        try {
+          if (Values.Token &amp;&amp; Values.Token !&#x3D; &#x27;&#x27;)
+            result &#x3D; result.append(
+              Constants.ESHeaders.AUTHORIZATION,
+              &#x60;Bearer ${Values.Token}&#x60;
+            );
+          if (result.has(Constants.ESHeaders.APPLICATION_ID) &#x3D;&#x3D;&#x3D; false)
+            result &#x3D; result.append(
+              Constants.ESHeaders.APPLICATION_ID,
+              Settings.APPLICATION_ID
+            );
+        } catch (error) {}
+        // result &#x3D; result.append(TAConstants.TAHeaders.SIGNATURE, signature);
+        // result &#x3D; result.append(TAConstants.TAHeaders.TIMESTAMP, currentTime);
+    
+        return { headers: result, uRLSearchParams: getParams };
+      }
+    
+    /**
+     * Format the request depending on needs of the server
+     * @param request 
+     * @returns Promise with the result of the request
+     */
+    private request(request: IHttp2EshopReq): Promise&lt;any&gt; {
+        const clearAuth &#x3D; () &#x3D;&gt; {
+            Values.Token &#x3D; null;
+            Values.Refresh &#x3D; null;
+            localStorage.clear();
+            this.router.navigate([&#x27;/login&#x27;], { replaceUrl: true });
+          };
+        const result &#x3D; this.getHeaders(
+            request.path,
+            request.queryParams,
+            request.input,
+            request.headers
+        );
+        const urlToCall: string &#x3D; request.isAuth ? Constants.Settings.SERVER_AUTH + request.path : 
+                                                   Constants.Settings.SERVER + request.path;
+        const options &#x3D; {
+            body: request.input,
+            headers: result.headers,
+            params: result.uRLSearchParams,
+            observe: &#x27;response&#x27; as &#x27;body&#x27; | &#x27;events&#x27; | &#x27;response&#x27;
+        }
+        return new Promise((resolve,reject) &#x3D;&gt; {
+            this.http.request(request.method, urlToCall, options).subscribe(
+                (response) &#x3D;&gt; {
+                    const sendResult &#x3D; (res: string) &#x3D;&gt; {
+                        let json &#x3D; JSON.parse(res);
+                        let headers &#x3D; response.headers;
+                        const headersToAdd &#x3D; [
+                            ESHeaders.APPLICATION_ID,
+                          ];
+                        if (headers) {
+                            headersToAdd.forEach((h) &#x3D;&gt; {
+                              if (headers.has(h)) {
+                                if (!json) json &#x3D; [];
+                                json[h] &#x3D; headers.get(h);
+                              }
+                            });
+                          }
+                        resolve(json);
+                    };
+                    try {
+                        if (
+                          response &amp;&amp;
+                          response.body &amp;&amp;
+                          response.body !&#x3D; &#x27;&#x27;
+                        ) {
+                          // if (response &amp;&amp; response.body &amp;&amp; response.body !&#x3D; &quot;&quot; &amp;&amp; true &amp;&amp; !request.disableEncryption) {
+                          // checkEncryption();
+            
+                          try {
+                            sendResult(response);
+                          } catch (err) {
+                            resolve(response);
+                          }
+                        } else {
+                          sendResult(response.body);
+                        }
+                      } catch (e) {
+                        resolve(response.body);
+                    }
+                },
+                (error) &#x3D;&gt; {
+                    reject(error || &#x27;Server error&#x27;);
+                }
+            )
+        })
+    }
+
+    /**
+     * Set GET method for incoming request
+     * @param request 
+     * @returns Formatted request with our parameters from settings and needed headers
+     */
+    public get(request: IHttp2EshopReq): Promise&lt;any&gt; {
+        request.method &#x3D; &#x27;GET&#x27;;
+        return this.request(request);
+    }
+
+    /**
+     * Set POST method for incoming request
+     * @param request 
+     * @returns Formatted request with our parameters from settings and needed headers
+     */
+    public post(request: IHttp2EshopReq): Promise&lt;any&gt; {
+        request.method &#x3D; &#x27;POST&#x27;;
+        return this.request(request);
+    }
+
+    /**
+     * Set DELETE method for incoming request
+     * @param request 
+     * @returns Formatted request with our parameters from settings and needed headers
+     */
+    public delete(request: IHttp2EshopReq): Promise&lt;any&gt; {
+        request.method &#x3D; &#x27;DELETE&#x27;;
+        return this.request(request);
+    }
+
+    /**
+     * Set PATCH method for incoming request
+     * @param request 
+     * @returns Formatted request with our parameters from settings and needed headers
+     */
+    public patch(request: IHttp2EshopReq): Promise&lt;any&gt; {
+        request.method &#x3D; &#x27;PATCH&#x27;;
+        return this.request(request);
+    }
+}
+
+export interface IHttp2EshopReq {
+    method?: string;
+    input?:any;
+    headers?:HttpHeaders;
+    path?:string;
+    queryParams?: any;
+    isAuth?:boolean;
+}</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'Http2Eshop.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
