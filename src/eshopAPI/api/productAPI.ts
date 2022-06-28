@@ -50,7 +50,7 @@ export class ProductAPI{
         return this.http2Eshop.patch({
             input:input,
             headers:headers,
-            path: `update-product`,
+            path: `/products/update-product`,
             isAuth: false
         })
     }
@@ -61,7 +61,7 @@ export class ProductAPI{
     ) : Promise<any> {
         return this.http2Eshop.delete({
             headers:headers,
-            path: `delete-product/${queryParams}`,
+            path: `/products/delete-product/${queryParams}`,
             isAuth: false
         })
     }
