@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "auth-start": "cd Server/ && nodemon authorizationServer.js",
+    "resource-start": "cd Server/ && nodemon protectedResource.js",
+    "server-test": "jest --verbose"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +27,7 @@
     "consolidate": "^0.16.0",
     "cors": "^2.8.5",
     "font-awesome": "^4.7.0",
+    "jest": "^28.1.2",
     "jsrsasign": "^10.5.24",
     "node-sass": "^7.0.1",
     "randomstring": "^1.2.2",
@@ -49,8 +53,9 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "nodemon": "^2.0.16",
+    "nodemon": "^2.0.18",
     "protractor": "~7.0.0",
+    "supertest": "^6.2.4",
     "ts-node": "~8.3.0",
     "tslib": "^2.4.0",
     "tslint": "^6.1.3",
