@@ -162,6 +162,7 @@ export class Http2Eshop{
      */
     public delete(request: IHttp2EshopReq): Promise<any> {
         request.method = 'DELETE';
+        console.log(request);
         return this.request(request);
     }
 

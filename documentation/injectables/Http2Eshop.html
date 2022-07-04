@@ -473,8 +473,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="173"
-                            class="link-to-prism">src/eshopAPI/http2Eshop.ts:173</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="174"
+                            class="link-to-prism">src/eshopAPI/http2Eshop.ts:174</a></div>
                 </td>
             </tr>
 
@@ -843,6 +843,7 @@ export class Http2Eshop{
      */
     public delete(request: IHttp2EshopReq): Promise&lt;any&gt; {
         request.method &#x3D; &#x27;DELETE&#x27;;
+        console.log(request);
         return this.request(request);
     }
 

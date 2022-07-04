@@ -8,11 +8,12 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationCancel, Naviga
   providers: [],
 })
 export class AppComponent {
-  pageTitle = 'Angular Routing Course';
-  loading: boolean = true;
+  pageTitle = 'Product E-Shop';
+  loading: boolean = false;
 
   // get isLoggedIn(): boolean {
-  //   return this.authService.isLoggedIn;
+
+  //   return ;
   // }
 
   // get userName(): string {
