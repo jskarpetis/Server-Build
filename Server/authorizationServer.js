@@ -12,7 +12,7 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-const cors_options = {origin: "*"};
+const cors_options = { origin: "*" };
 // authorization server information
 var authServer = {
   baseUrl: "http://localhost:9003",
@@ -34,7 +34,7 @@ var clients = [
             username: "jskarpetis",
             password: "koko1234",
             userType: "customer",
-            scope: ["products", ""],
+            scope: ["products"],
           },
           {
             userId: "2",
@@ -91,9 +91,9 @@ var findRefreshToken = (requestToken) => {
 
 app.get("/", function (req, res) {});
 
-app.post("/login",cors(), function (req, res) {
+app.post("/login", cors(), function (req, res) {
   clientId = req.headers["application-id"];
-  
+
   var client = getClient(clientId);
 
   if (!client) {
@@ -289,6 +289,7 @@ app.get("/approve", function (req, res) {
       // console.log("Codes -> ", codes);
       // console.log("Logins -> ", logins);
       // console.log("Access Tokens -> ", accessTokens);
+      console.log(urlParsed);
       res.redirect(urlParsed); // Redirecting token endpoint
       return;
     } else {
@@ -525,9 +526,10 @@ var server = app.listen(9003, "localhost", function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log("Authorization Server is listening at http://%s:%s", host, port);
+  // console.log("Authorization Server is listening at http://%s:%s", host, port);
 });
 
+module.exports = app;
 // Security Threats
 
 // Session hijacking: If url remains on the browser history
