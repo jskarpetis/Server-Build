@@ -250,6 +250,9 @@ app.get(
   cors(),
   function (req, res) {
     var products = [];
+    if ((req.access_token.scope.length = 1)) {
+      req.access_token.scope = [req.access_token.scope];
+    }
     // According to the scope we build the response object in this case gymStats
     if (__.contains(req.access_token.scope, "products")) {
       products = productData;
@@ -463,11 +466,11 @@ var server = app.listen(9002, "localhost", function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log(
-    "E-shop protected resource Server is listening at http://%s:%s",
-    host,
-    port
-  );
+  // console.log(
+  //   "E-shop protected resource Server is listening at http://%s:%s",
+  //   host,
+  //   port
+  // );
 });
 
 // Possible Vulnerabilities
