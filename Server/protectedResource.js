@@ -473,6 +473,7 @@ var server = app.listen(9002, "localhost", function () {
   // );
 });
 
+module.exports = app;
 // Possible Vulnerabilities
 
 // To avoid cross-site scripting attacks
