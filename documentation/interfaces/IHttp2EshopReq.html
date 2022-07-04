@@ -533,6 +533,7 @@ export class Http2Eshop{
      */
     public delete(request: IHttp2EshopReq): Promise&lt;any&gt; {
         request.method &#x3D; &#x27;DELETE&#x27;;
+        console.log(request);
         return this.request(request);
     }
 
