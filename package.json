@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
 
-    "compodoc": "npx compodoc -p tsconfig.doc.json"
+    "compodoc": "npx compodoc -p tsconfig.doc.json",
 
     "auth-start": "cd Server/ && nodemon authorizationServer.js",
     "resource-start": "cd Server/ && nodemon protectedResource.js",
