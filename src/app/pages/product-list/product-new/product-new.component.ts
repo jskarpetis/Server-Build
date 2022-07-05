@@ -69,6 +69,7 @@ export class ProductNewComponent extends BaseComponent implements OnInit {
 
     async ProductAdded(response){
         console.log(response);
+        this.router.navigateByUrl('/products');
     }
 
     Back(){

@@ -13,9 +13,19 @@ import { ProductsPresenter } from "../products.presenter";
     providers: [ProductsPresenter]
 })
 export class ProductDetailComponent extends BaseComponent implements OnInit {
+    private _hasPrivilige:boolean;
     pageTitle = 'Product Detail';
     _product: IProduct = null;
     errorMessage: string = "Default";
+    
+
+    get hasPrivilige(): boolean {
+        return this._hasPrivilige;
+    }
+
+    set hasPrivilige(bool:boolean){
+        this._hasPrivilige = bool;
+    }
 
     set product(prod: IProduct){
         this._product = prod;
@@ -34,12 +44,15 @@ export class ProductDetailComponent extends BaseComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.hasPrivilige = this.globalService.isAdmin;
         this.presenter.getProductByIdObserver$.pipe(takeUntil(this.destroy)).subscribe((value) => {
             this.IdProduct(value);
         });
         this.getProductById();
     }
-
+    Back(){
+        this.router.navigateByUrl('/products');
+    }
     getProductById(){
         this.presenter.getProdById(this.globalService.id);
     }

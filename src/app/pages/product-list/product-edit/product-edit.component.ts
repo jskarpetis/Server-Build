@@ -45,8 +45,11 @@ export class ProductEditComponent extends BaseComponent implements OnInit {
 
     ngOnInit(): void {
         this.editProduct = this.fb.group({
-            productName : ["" , [Validators.required]],
+            productName : [],
+            productCode : [],
+            productPrice : []
         });
+        this.editProduct.setValidators(this.atLeastOneValidator());
         this.presenter.updateProductObserver$
         .pipe(
             // complete when component is destroyed
@@ -56,9 +59,35 @@ export class ProductEditComponent extends BaseComponent implements OnInit {
             this.savedProduct(value);
         });
 
+        this.presenter.deleteProductObserver$
+        .pipe(
+            // complete when component is destroyed
+            takeUntil(this.destroy)
+        )
+        .subscribe((value) => {
+            this.deletedProduct(value);
+        });
         
     }
+    private atLeastOneValidator = () => {
+        return (controlGroup) => {
+            let controls = controlGroup.controls;
+            if ( controls ) {
+                let theOne = Object.keys(controls).find(key=> controls[key].value!=='');
+                if ( !theOne ) {
+                    return {
+                        atLeastOneRequired : {
+                            text : 'At least one should be selected'
+                        }
+                    }
+                }
+            }
+            return null;
+        };
+    };
+
     async savedProduct(response:any){
+        this.router.navigateByUrl('/products');
         console.log(response);
     }
     saveProduct(){
@@ -67,12 +96,28 @@ export class ProductEditComponent extends BaseComponent implements OnInit {
         }
         const id = this.globalService.id;
         const productName = this.editProduct.get('productName').value;
+        const productCode = this.editProduct.get('productCode').value;
+        const productPrice = this.editProduct.get('productPrice').value;
 
         const input: any = {
             id:id,
-            productName:productName
         };
+        if(productName)input.productName = productName ;
+        if(productCode)input.productCode = productCode ;
+        if(productPrice)input.productPrice = productPrice ;
         this.presenter.updateProduct(input);
+    }
+
+    cancel(){
+        this.router.navigateByUrl('/products');
+    }
+
+    async deletedProduct(response:any){
+        this.router.navigateByUrl('/products');
+    }
+    delete(){
+        const id = this.globalService.id;
+        this.presenter.deleteProduct(id);
     }
     
 }

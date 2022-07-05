@@ -54,10 +54,11 @@
           <!-- Here we notice that queryParamsHandling is used: We use it because when we click the back button of the details, we want the system to retain all the query parameters that we have given  -->
           <button class="btn btn-outline-secondary mr-3"
                   style="width:80px"
-                  queryParamsHandling="preserve">
+                  queryParamsHandling="preserve"
+                  (click)="Back()">
             <a class="fa fa-chevron-left" ></a> Back
           </button>
-          <button class="btn btn-outline-primary"
+          <button *ngIf="hasPrivilige" class="btn btn-outline-primary"
                   style="width:80px">
             Edit
           </button>

@@ -14,41 +14,72 @@
         </div>
     </div>
     <form [formGroup]="editProduct" novalidate (ngSubmit)="saveProduct()" autocomplete="off">
-        <fieldset>
+        <fieldset style="padding: 2% 2% ">
             <legend>Edit Product Information</legend>
-            <div class="form-group row">
+            <div class="form-group row" style="margin-left: 5%;">
                 <label for="productNameId">Edit Name</label>
                 <div class="col-md-8">
                     <input type="text" 
                         class="form-control"
                         id="productNameId"
-                        placeholder="Name (required)"
-                        required
+                        placeholder="Name"
                         minlength="3"
                         formControlName="productName">
                 </div>
             </div>
+            <div class="form-group row" style="margin-left: 5%;">
+                <label for="productCodeId">Edit Code</label>
+                <div class="col-md-8">
+                    <input type="text" 
+                        class="form-control"
+                        id="productCodeId"
+                        placeholder="Code"
+                        formControlName="productCode">
+                </div>
+            </div>
+            <div class="form-group row" style="margin-left: 5%;">
+                <label for="productPriceId">Edit Price</label>
+                <div class="col-md-8">
+                    <input type="text" 
+                        class="form-control"
+                        id="productPriceId"
+                        placeholder="Code"
+                        formControlName="productPrice">
+                </div>
+            </div>
+            <div class="form-group row" style="margin-left: 5%;">
+                <label for="productPriceId">Edit Code</label>
+                <div class="col-md-8">
+                    <input type="text" 
+                        class="form-control"
+                        id="productPriceId"
+                        placeholder="Code"
+                        formControlName="productCode">
+                </div>
+            </div>
+            
         </fieldset>
         <div class="row mb-2">
             <div class="col-md-4">
                 <button class="btn btn-primary mr-3"
                     style="width:80px;"
                     type="submit"
-                    title="Save your entered data">
+                    title="Save your entered data"
+                    [disabled]="!editProduct.valid">
                     Save
                 </button>
                 <button class="btn btn-primary mr-3"
                     style="width:80px;"
                     type="button"
                     title="Cancel your edits"
-                    (click)="saveProduct()">
+                    (click)="cancel()">
                     Cancel
                 </button>
                 <button class="btn btn-primary mr-3"
                     style="width:80px;"
                     type="button"
                     title="Delete this product"
-                    (click)="saveProduct()">
+                    (click)="delete()">
                     Delete
                 </button>
             </div>

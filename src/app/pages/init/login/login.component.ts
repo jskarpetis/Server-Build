@@ -59,6 +59,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
     async onLoginSubmitted(response : any) {
         if(response){
+            this.globalService.isAdmin = response.body.scope.includes('editing');
             this.router.navigateByUrl('/products');
         }
     }

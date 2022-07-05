@@ -250,7 +250,9 @@ app.get(
   cors(),
   function (req, res) {
     var products = [];
-    if ((req.access_token.scope.length = 1)) {
+    console.log(req.access_token.scope);
+    console.log(typeof(req.access_token.scope));
+    if (typeof(req.access_token.scope)==='string') {
       req.access_token.scope = [req.access_token.scope];
     }
     // According to the scope we build the response object in this case gymStats

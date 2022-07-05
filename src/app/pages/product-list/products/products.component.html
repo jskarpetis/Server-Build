@@ -1,14 +1,16 @@
-<div class="card">
+<div class="card" style="width: 80%;margin:0 auto">
     <div class="card-body">
       <div class="row">
         <div class="col-md-2">Filter by:</div>
         <div class="col-md-4">
-          <input type="text" />
+          <input type="text"
+                 [(ngModel)]="listFilter" />
         </div>
       </div>
-      <div class="row">
+      <div class="row"
+         *ngIf="listFilter">
         <div class="col-md-6">
-          <h4>Filtered by:</h4>
+          <h4>Filtered by: {{listFilter}}</h4>
         </div>
       </div>
   
@@ -32,7 +34,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let product of this.products">
+            <tr *ngFor="let product of filteredProducts">
               <td>
                 <img *ngIf="showImage && product.imageUrl"
                      [src]="product.imageUrl"
@@ -56,7 +58,7 @@
               </td>
               <td>
                 <!-- Binding the button edit to the productEdit page  -->
-                <button class="btn btn-outline-primary btn-sm" (click)="EditProduct(product.id)">
+                <button *ngIf="hasPrivilige" class="btn btn-outline-primary btn-sm" (click)="EditProduct(product.id)">
                   Edit
                 </button>
               </td>
@@ -66,7 +68,7 @@
       </div>
       
     </div>
-    <button (click)="AddProduct()">
-      add new product
+    <button *ngIf="hasPrivilige" class="btn btn-primary mr-3" style="width:20%; margin: auto;margin-bottom: 2%;" (click)="AddProduct()">
+      Add new product
     </button>
   </div>

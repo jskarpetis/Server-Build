@@ -1,8 +1,17 @@
+*{
+    padding: 10% 10%;
+    width: 20%;
+    margin: 0 auto;
+}
+
 .nav-link {
   font-size: large;
   cursor: pointer;
 }
 
+.card{
+    width: 70%;
+}
 .navbar-light .navbar-nav .nav-link.active {
   color: #007ACC
 }
