@@ -76,22 +76,22 @@ describe("Any request to the protected resource", () => {
 });
 
 // Not working for some reason
-// describe("GET /products/:id", () => {
-//   it("Returns status code 404 if the provided id doesn't exist", async () => {
-//     const res = request(protectedResource)
-//       .get("/products")
-//       .send({
-//         access_token: produceFakeToken(
-//           "http://localhost:9003/",
-//           "http://localhost:9002/",
-//           Math.floor(Date.now() / 1000),
-//           Math.floor(Date.now() / 1000) + 5 * 60
-//         ),
-//       })
-//       .query({ id: "random" });
-//     expect(res.statusCode).toEqual(404);
-//     expect(res.body.error.message).toEqual("Cannot find requested resource");
-//   });
-// });
+describe("GET /products/:id", () => {
+  it("Returns status code 404 if the provided id doesn't exist", async () => {
+    const res = await request(protectedResource)
+      .get("/products/:id")
+      .send({
+        access_token: produceFakeToken(
+          "http://localhost:9003/",
+          "http://localhost:9002/",
+          Math.floor(Date.now() / 1000),
+          Math.floor(Date.now() / 1000) + 5 * 60
+        ),
+      })
+      .query({ id: "random" });
+    expect(res.statusCode).toEqual(404);
+    expect(res.body.error.message).toEqual("Cannot find requested resource.");
+  });
+});
 
 // describe("GET /products/:id", () => {});
