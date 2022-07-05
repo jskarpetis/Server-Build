@@ -11,7 +11,7 @@
     "compodoc": "npx compodoc -p tsconfig.doc.json",
     "auth-start": "cd Server/ && nodemon authorizationServer.js",
     "resource-start": "cd Server/ && nodemon protectedResource.js",
-    "server-test": "jest --verbose"
+    "server-test": "jest"
   },
   "private": true,
   "dependencies": {
