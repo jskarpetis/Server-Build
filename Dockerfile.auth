@@ -1,0 +1,11 @@
+
+FROM node:14.15.5-alpine
+
+WORKDIR /usr/server
+COPY package.json package-lock.json ./
+
+RUN npm install
+COPY . .
+
+CMD ["npm", "run", "auth-start"]
+EXPOSE 9003
