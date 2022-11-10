@@ -3,147 +3,496 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>apm documentation</title>
+        <title>Eshop documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">apm documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <a href="../" class="navbar-brand">Eshop documentation</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">Eshop documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/LoginModule.html" >LoginModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ProductDetailModule.html" >ProductDetailModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ProductEditModule.html" >ProductEditModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ProductNewModule.html" >ProductNewModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ProductsModule.html"  class="active" >ProductsModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SharedModule.html" >SharedModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/eshopApiModule.html" >eshopApiModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PageNotFoundComponent.html" >PageNotFoundComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProductDetailComponent.html" >ProductDetailComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProductEditComponent.html" >ProductEditComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProductNewComponent.html" >ProductNewComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProductsComponent.html" >ProductsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/StarComponent.html" >StarComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/AppPage.html" >AppPage</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/AuthenticationAPI.html" >AuthenticationAPI</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/AuthenticationService.html" >AuthenticationService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/BaseComponent.html" >BaseComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/BasePresenter.html" >BasePresenter</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/GlobalsService.html" >GlobalsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/Http2Eshop.html" >Http2Eshop</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/InitPresenter.html" >InitPresenter</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ProductAPI.html" >ProductAPI</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ProductService.html" >ProductService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ProductsPresenter.html" >ProductsPresenter</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/AdminLoginInput.html" >AdminLoginInput</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/AdminLoginResponse.html" >AdminLoginResponse</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/GetProductsResponse.html" >GetProductsResponse</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/IHttp2EshopReq.html" >IHttp2EshopReq</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/IProduct.html" >IProduct</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/IProductResolved.html" >IProductResolved</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/RegisterProductResponse.html" >RegisterProductResponse</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/UpdateProductResponse.html" >UpdateProductResponse</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">Eshop documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/LoginModule.html" >LoginModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ProductDetailModule.html" >ProductDetailModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ProductEditModule.html" >ProductEditModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ProductNewModule.html" >ProductNewModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ProductsModule.html"  class="active" >ProductsModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SharedModule.html" >SharedModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/eshopApiModule.html" >eshopApiModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PageNotFoundComponent.html" >PageNotFoundComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProductDetailComponent.html" >ProductDetailComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProductEditComponent.html" >ProductEditComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProductNewComponent.html" >ProductNewComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProductsComponent.html" >ProductsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/StarComponent.html" >StarComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/AppPage.html" >AppPage</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/AuthenticationAPI.html" >AuthenticationAPI</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/AuthenticationService.html" >AuthenticationService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/BaseComponent.html" >BaseComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/BasePresenter.html" >BasePresenter</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/GlobalsService.html" >GlobalsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/Http2Eshop.html" >Http2Eshop</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/InitPresenter.html" >InitPresenter</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ProductAPI.html" >ProductAPI</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ProductService.html" >ProductService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ProductsPresenter.html" >ProductsPresenter</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/AdminLoginInput.html" >AdminLoginInput</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/AdminLoginResponse.html" >AdminLoginResponse</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/GetProductsResponse.html" >GetProductsResponse</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/IHttp2EshopReq.html" >IHttp2EshopReq</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/IProduct.html" >IProduct</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/IProductResolved.html" >IProductResolved</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/RegisterProductResponse.html" >RegisterProductResponse</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/UpdateProductResponse.html" >UpdateProductResponse</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content module">
                    <div class="content-data">
 
-
-
 <ol class="breadcrumb">
-    <li>Modules</li>
-    <li >ProductsModule</li>
+  <li>Modules</li>
+  <li>ProductsModule</li>
 </ol>
 
-<div class="text-center module-graph-container">
-    <div id="module-graph-svg">
-        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 3.0.0 (20220226.1711)
- -->
-<!-- Title: dependencies Pages: 1 -->
-<svg width="507pt" height="312pt"
- viewBox="0.00 0.00 507.00 311.80" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 307.8)">
-<title>dependencies</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-307.8 503,-307.8 503,4 -4,4"/>
-<text text-anchor="middle" x="249.5" y="-8.2" font-family="sans-serif" font-size="14.00">dependencies</text>
-<g id="clust1" class="cluster">
-<title>cluster_ProductsModule</title>
-<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-295.8 491,-295.8 491,-32.8 8,-32.8"/>
-</g>
-<g id="clust2" class="cluster">
-<title>cluster_ProductsModule_declarations</title>
-<polygon fill="none" stroke="black" points="337,-105.8 337,-157.8 483,-157.8 483,-105.8 337,-105.8"/>
-</g>
-<g id="clust3" class="cluster">
-<title>cluster_ProductsModule_ProductsComponent_providers</title>
-<polygon fill="none" stroke="black" points="305,-40.8 305,-92.8 483,-92.8 483,-40.8 305,-40.8"/>
-</g>
-<g id="clust4" class="cluster">
-<title>cluster_ProductsModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-105.8 16,-157.8 329,-157.8 329,-105.8 16,-105.8"/>
-</g>
-<g id="clust5" class="cluster">
-<title>cluster_ProductsModule_exports</title>
-<polygon fill="none" stroke="black" points="156,-235.8 156,-287.8 306,-287.8 306,-235.8 156,-235.8"/>
-</g>
-<!-- ProductsComponent -->
-<g id="node1" class="node">
-<title>ProductsComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="475.33,-149.8 344.67,-149.8 344.67,-113.8 475.33,-113.8 475.33,-149.8"/>
-<text text-anchor="middle" x="410" y="-127.6" font-family="Times,serif" font-size="14.00">ProductsComponent</text>
-</g>
-<!-- ProductsModule -->
-<g id="node2" class="node">
-<title>ProductsModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="285.05,-214.8 282.05,-218.8 261.05,-218.8 258.05,-214.8 176.95,-214.8 176.95,-178.8 285.05,-178.8 285.05,-214.8"/>
-<text text-anchor="middle" x="231" y="-192.6" font-family="Times,serif" font-size="14.00">ProductsModule</text>
-</g>
-<!-- ProductsComponent&#45;&gt;ProductsModule -->
-<g id="edge1" class="edge">
-<title>ProductsComponent&#45;&gt;ProductsModule</title>
-<path fill="none" stroke="black" d="M410,-149.91C410,-169.14 410,-196.8 410,-196.8 410,-196.8 295.19,-196.8 295.19,-196.8"/>
-<polygon fill="black" stroke="black" points="295.19,-193.3 285.19,-196.8 295.19,-200.3 295.19,-193.3"/>
-</g>
-<!-- ProductsComponent  -->
-<g id="node6" class="node">
-<title>ProductsComponent </title>
-<polygon fill="#fb8072" stroke="black" points="297.83,-279.8 164.17,-279.8 164.17,-243.8 297.83,-243.8 297.83,-279.8"/>
-<text text-anchor="middle" x="231" y="-257.6" font-family="Times,serif" font-size="14.00">ProductsComponent </text>
-</g>
-<!-- ProductsModule&#45;&gt;ProductsComponent  -->
-<g id="edge5" class="edge">
-<title>ProductsModule&#45;&gt;ProductsComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M231,-214.91C231,-214.91 231,-233.79 231,-233.79"/>
-<polygon fill="black" stroke="black" points="227.5,-233.79 231,-243.79 234.5,-233.79 227.5,-233.79"/>
-</g>
-<!-- ProductsPresenter -->
-<g id="node3" class="node">
-<title>ProductsPresenter</title>
-<ellipse fill="#fdb462" stroke="black" cx="394" cy="-66.8" rx="80.53" ry="18"/>
-<text text-anchor="middle" x="394" y="-62.6" font-family="Times,serif" font-size="14.00">ProductsPresenter</text>
-</g>
-<!-- ProductsPresenter&#45;&gt;ProductsComponent -->
-<g id="edge2" class="edge">
-<title>ProductsPresenter&#45;&gt;ProductsComponent</title>
-<path fill="none" stroke="black" d="M409.8,-84.56C409.8,-84.56 409.8,-103.61 409.8,-103.61"/>
-<polygon fill="black" stroke="black" points="406.3,-103.61 409.8,-113.61 413.3,-103.61 406.3,-103.61"/>
-</g>
-<!-- ProductsPageRoutingModule -->
-<g id="node4" class="node">
-<title>ProductsPageRoutingModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="321.38,-149.8 318.38,-153.8 297.38,-153.8 294.38,-149.8 140.62,-149.8 140.62,-113.8 321.38,-113.8 321.38,-149.8"/>
-<text text-anchor="middle" x="231" y="-127.6" font-family="Times,serif" font-size="14.00">ProductsPageRoutingModule</text>
-</g>
-<!-- ProductsPageRoutingModule&#45;&gt;ProductsModule -->
-<g id="edge3" class="edge">
-<title>ProductsPageRoutingModule&#45;&gt;ProductsModule</title>
-<path fill="none" stroke="black" d="M231,-149.91C231,-149.91 231,-168.79 231,-168.79"/>
-<polygon fill="black" stroke="black" points="227.5,-168.79 231,-178.79 234.5,-168.79 227.5,-168.79"/>
-</g>
-<!-- SharedModule -->
-<g id="node5" class="node">
-<title>SharedModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="122.43,-149.8 119.43,-153.8 98.43,-153.8 95.43,-149.8 23.57,-149.8 23.57,-113.8 122.43,-113.8 122.43,-149.8"/>
-<text text-anchor="middle" x="73" y="-127.6" font-family="Times,serif" font-size="14.00">SharedModule</text>
-</g>
-<!-- SharedModule&#45;&gt;ProductsModule -->
-<g id="edge4" class="edge">
-<title>SharedModule&#45;&gt;ProductsModule</title>
-<path fill="none" stroke="black" d="M73,-149.91C73,-169.14 73,-196.8 73,-196.8 73,-196.8 166.63,-196.8 166.63,-196.8"/>
-<polygon fill="black" stroke="black" points="166.63,-200.3 176.63,-196.8 166.63,-193.3 166.63,-200.3"/>
-</g>
-</g>
-</svg>
-
-    </div>
-    <i id="fullscreen" class="icon ion-ios-resize module-graph-fullscreen-btn" aria-hidden="true"></i>
-    <div class="btn-group size-buttons">
+<div class="text-center">
+    <object id="demo-svg" type="image/svg+xml" data="../modules/ProductsModule/dependencies.svg" style="width: 100%; height: 250px;">
+            Your browser does not support SVG
+    </object>
+    <div class="btn-group">
         <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
         <button id="reset" class="btn btn-default btn-sm">Reset</button>
         <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
@@ -153,17 +502,16 @@
 <script src="../js/svg-pan-zoom.controls.js"></script>
 
 <ul class="nav nav-tabs" role="tablist">
-    <li  class="active" >
-        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
     </li>
-    <li >
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
     </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-
+    <div class="tab-pane fade active in" id="infos">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -172,50 +520,37 @@
         </p>
 
 
-
-
-
         <div class="container-fluid module">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3>Declarations<a href="https://angular.io/api/core/NgModule#declarations" target="_blank"
-                            title="Official documentation about module declarations"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
+                    <h3>Declarations<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#declarations-anchor" target="_blank"><span class="fa fa-info-circle"></span></a></h3>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../components/ProductsComponent.html">ProductsComponent</a>
-                        </li>
+                            <li class="list-group-item">
+                                <a href="../components/ProductsComponent.html">ProductsComponent</a>
+                            </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Imports<a href="https://angular.io/api/core/NgModule#imports" target="_blank" title="Official documentation about module imports"><span
-                                class="icon ion-ios-information-circle-outline"></a></h3>
+                    <h3>Imports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#imports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../modules/ProductsPageRoutingModule.html">ProductsPageRoutingModule</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../modules/SharedModule.html">SharedModule</a>
-                        </li>
+                            <li class="list-group-item">
+                                    <a href="../modules/SharedModule.html" >SharedModule</a>
+                            </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span
-                                class="icon ion-ios-information-circle-outline"></a></h3>
+                    <h3>Exports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#exports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../components/ProductsComponent.html">ProductsComponent</a>
-                        </li>
+                            <li class="list-group-item">
+                                    <a href="../components/ProductsComponent.html" >ProductsComponent</a>
+                            </li>
                     </ul>
                 </div>
             </div>
         </div>
-
-
     </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { SharedModule } from &#x27;src/app/shared.module&#x27;;
 import { ProductsComponent } from &#x27;./products.component&#x27;;
 import { ProductsPageRoutingModule } from &#x27;./products.routing&#x27;;
@@ -244,13 +579,6 @@ export class ProductsModule {
 
 
 
-
-
-
-
-
-
-
                    </div><div class="search-results">
     <div class="has-results">
         <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
@@ -261,31 +589,8 @@ export class ProductsModule {
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-          <label class="dark-mode-switch">
-               <input type="checkbox">
-               <span class="slider">
-                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-                    </svg>
-               </span>
-          </label>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'ProductsModule.html';
-            var MAX_SEARCH_RESULTS = 15;
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-
-       <script src="../js/menu-wc.js" defer></script>
-       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -296,17 +601,20 @@ export class ProductsModule {
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>

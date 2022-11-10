@@ -1,4 +1,6 @@
 {
-    "include": ["src/**/*.ts"],
-    "exclude": ["src/test.ts", "src/**/*.spec.ts"]
-  }
+  "compilerOptions": {
+    "experimentalDecorators": true
+  },
+  "include": ["src/**/*.ts"]
+}

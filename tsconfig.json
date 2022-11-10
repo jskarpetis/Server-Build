@@ -18,7 +18,15 @@
     },
     {
       "path": "./tsconfig.base.json"
+    },
+    {
+      "path": "./tsconfig.doc.json"
     }
   ],
-  "angularCompilerOptions": { "fullTemplateTypeCheck": true, "strictInjectionParameters": true, "enableIvy": false }
+  "angularCompilerOptions": {
+    "experimentalDecorators": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "enableIvy": false
+  }
 }
